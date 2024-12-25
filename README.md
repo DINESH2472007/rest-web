@@ -1,5 +1,5 @@
 # Ex.07 Restaurant Website
-## Date:18/12/2024
+## Date:25/12/2024
 
 ## AIM:
 To develop a static Restaurant website to display the food items and services provided by them.
@@ -30,478 +30,209 @@ Publish the website in the given URL.
 ## PROGRAM:
 ```
 
-table.html
 
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUPERSTAR foods</title>
-    <style>
-        body {
-            background-color: rgb(238, 251, 179);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color:rgb(183, 198, 141);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color:rgb(199, 249, 138);
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        nav a:hover {
-            background-color:rgb(209, 248, 94);
-        }
-        .hero {
-             background-color:rgb(127, 163, 35);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        .hero h1 {
-            font-size: 3rem;
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        .menu {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .menu-item {
-            border: 1px solid rgb(51, 170, 103);
-            border-radius: 5px;
-            margin: 10px;
-            padding: 20px;
-            width: 300px;
-        }
-        .menu-item img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        footer {
-            background-color:rgb(240, 247, 115);
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-        }
-    </style>
+    <title>TUNTUN RESTAURANT</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>SUPERSTAR foods</h1>
-    </header>
-    <nav>
-        <a href="home.html">home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Menu</a>
-        <a href="contact.html">Contact</a>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Delius&family=Pacifico&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 10;
+    font-style: bold;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background-image: url("https://i.pinimg.com/236x/6b/7c/3a/6b7c3af7f32ed3fea9f7dbf47785c4bd.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(4px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3d9aa;
+    padding: 10px 20px;
+}
+
+.navbar img{
+    display: flex;
+    height: 70px;
+    width: 40px;
+}
+
+.navbar .logo {
+    color: #000000;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+    font-size: 1.5em;
+}
+
+.nav-links a {
+    color: green;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ffffffbe;
+    border-radius: 4px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+</style>
+    <div class="background"></div>
+
+    <nav class="navbar">
+        <div class="logo"> TUNTUN Restaurant</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-    <div class="hero">
-        <h1>Welcome to Our Restaurant</h1>
+
+    <div class="bg">
+        <div class="menu-container">
+            <div class="card">
+                <img src="https://i.pinimg.com/236x/c2/ab/8b/c2ab8b5591674a253d7d566cae43d763.jpg" alt="Briyani">
+                <div class="card-content">
+                    <h3>Briyani</h3>
+                    <p>Crispy and Yummy Briyani.</p>
+                    <span class="price">Rs. 110</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.pexels.com/photos/28674705/pexels-photo-28674705/free-photo-of-indian-dal-and-rice-in-traditional-utensils.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Dal Rice">
+                <div class="card-content">
+                    <h3>Dal Rice</h3>
+                    <p>Traditional Indian Dal and Rice.</p>
+                    <span class="price">Rs. 50</span>
+                </div>
+            </div>
+        
+            <div class="card">
+                <img src="https://images.pexels.com/photos/20422135/pexels-photo-20422135/free-photo-of-meal-on-plate-and-sauces.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Vada">
+                <div class="card-content">
+                    <h3>Vada</h3>
+                    <p>Crispy and Crunchy Vada.</p>
+                    <span class="price">Rs. 10</span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-container">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/29333631/pexels-photo-29333631/free-photo-of-warm-ceramic-coffee-cup-on-marble-surface.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Coffee">
+                <div class="card-content">
+                    <h3>Coffee</h3>
+                    <p>A delightful Coffee.</p>
+                    <span class="price">Rs. 10</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.pexels.com/photos/20689160/pexels-photo-20689160/free-photo-of-flat-bread-and-elephant-figurine.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chappathi">
+                <div class="card-content">
+                    <h3>Chappathi</h3>
+                    <p>Soft Chapathi.</p>
+                    <span class="price">Rs. 15</span>
+                </div>
+            </div>
+        
+            <div class="card">
+                <img src="https://images.pexels.com/photos/2456435/pexels-photo-2456435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Noodles">
+                <div class="card-content">
+                    <h3>Noodles</h3>
+                    <p>Nice and long Noodles.</p>
+                    <span class="price">Rs. 100</span>
+                </div>
+            </div>
+        </div>
     </div>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are passionate about serving delicious food made with fresh ingredients. Join us for an unforgettable dining experience!</p>
-    </section>
-    <section id="menu">
-        <h2>Our Menu</h2>
-        <div class="menu">
-                <div class="menu-item">
-                    <img src="Crispy Masala Dosa.jpg" alt="DOSA">
-                    <h3>DOSA</h3>
-                    <p>Crispy and tasty Dosa </p>
-                </div>
-                <div class="menu-item">
-                    <img src="Onam Sadhya _ Onam Sadya Recipes.jpg" alt="MEALS">
-                    <h3>MEALS</h3>
-                    <p> an act or the time of eating a portion of food to satisfy appetite the portion of food eaten at a meal.</p>
-                </div>
-                <div class="menu-item">
-                    <img src="Chai (Spiced Milk Tea) - Fuss Free Cooking.jpg" alt="TEA">
-                    <h3>TEA</h3>
-                    <p>Tea is an aromatic beverage prepared by pouring hot or boiling water over cured or fresh leaves of Camellia sinensis.</p>
-                </div>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Phone:8491641932</p>
-        <p>Email:superstarfoods@gmail.com</p>
-        <p>Address: 143 rio Street,trumph road ,chennai</p>
-    </section>
-    <footer>
-        <p>&copy; SUPERSTAR foods. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
-
-menu.html
-
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Rio Foods</title>
-    <style>
-        body {
-            background-color: rgb(226, 185, 198);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: rgb(171, 106, 151);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: rgb(187, 85, 186);
-        }
-        nav a {
-            color: rgb(248, 97, 97);
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        nav a:hover {
-            background-color: rgb(137, 28, 135);
-        }
-        section {
-            padding: 20px;
-        }
-        .menu {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-        .menu-item {
-            border: 1px solid silver;
-            border-radius: 5px;
-            margin: 10px;
-            padding: 20px;
-            width: 300px;
-        }
-        .menu-item img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        footer {
-            background-color: rgb(181, 41, 146);
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Our Menu</h1>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <section>
-        <h2>Explore Our Dishes</h2>
-        <div class="menu">
-            <div class="menu-item">
-                <img src="Crispy Masala Dosa.jpg" alt="DOSA">
-                <h3>DOSA</h3>
-                <p>Crispy and tasty Dosa </p>
-            </div>
-            <div class="menu-item">
-                <img src="Onam Sadhya _ Onam Sadya Recipes.jpg" alt="MEALS">
-                <h3>MEALS</h3>
-                <p> an act or the time of eating a portion of food to satisfy appetite the portion of food eaten at a meal.</p>
-            </div>
-            <div class="menu-item">
-                <img src="Chai (Spiced Milk Tea) - Fuss Free Cooking.jpg" alt="TEA">
-                <h3>TEA</h3>
-                <p>Tea is an aromatic beverage prepared by pouring hot or boiling water over cured or fresh leaves of Camellia sinensis.</p>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; SUPERSTAR Foods. All Rights Reserved.</p>
-        <p> designed and developed by: SHREE CHANDRU R</p>
-    </footer>
-</body>
-</html>
-
-index.html
-
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home -SUPERSTAR Foods</title>
-    <style>
-        body {
-            background-color: rgb(146, 243, 178);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: rgb(126, 239, 116);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: rgb(90, 156, 72);
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        nav a:hover {
-            background-color: rgb(230, 236, 115);
-        }
-        .welcome {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 50px;
-        }
-        .welcome h1 {
-            font-size: 2.5rem;
-        }
-        .welcome p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-            text-align: center;
-        }
-        .feature {
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid silver;
-            border-radius: 5px;
-            width: 300px;
-        }
-        footer {
-            background-color: rgb(4, 114, 6);
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to SUPERSTAR FOODS</h1>
-    </header>
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Menu</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <div class="welcome">
-        <h1>Your Destination for Exquisite Cuisine</h1>
-        <p>SUPERSTAR Foods offers a wide range of delicious dishes made from the freshest ingredients. Experience the taste of perfection with every bite!</p>
-    </div>
-    <section class="features">
-        <div class="feature">
-            <h3>Fresh Ingredients</h3>
-            <p>We use only the freshest and highest-quality ingredients to prepare our dishes.</p>
-        </div>
-        <div class="feature">
-            <h3>Family-Friendly</h3>
-            <p>Enjoy a welcoming and comfortable atmosphere perfect for family gatherings.</p>
-        </div>
-        <div class="feature">
-            <h3>Exceptional Service</h3>
-            <p>Our friendly staff is here to make your dining experience unforgettable.</p>
-        </div>
-    </section>
-    <footer>
-        <p>&copy;SUPERSTAR Foods. All Rights Reserved.</p>
-        <p> designed and developed by:SHREE CHANDRU R</p>
-    </footer>
-</body>
-</html>
-
-contact.html
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - SUPERSTAR Foods</title>
-    <style>
-        body {
-            background-color: rgb(154, 238, 246);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: rgb(112, 186, 183);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: rgb(24, 121, 151);
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        nav a:hover {
-            background-color: rgb(17, 97, 97);
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        footer {
-            background-color: rgb(6, 178, 241);
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Contact Us</h1>
-    </header>
-    <nav>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <section>
-        <h2>A warm welcome</h2>
-        <div class="contact-info">
-            <p><strong>Phone:</strong>8491641932</p>
-            <p><strong>Email:</strong> superstarfoods@gmail.com</p>
-            <p><strong>Address:</strong> 143 middle Street, trumph road , Chennai</p>
-            <p>we value your feedback</p>
-    </section>
-    <footer>
-        <p>&copy; SUPERSTAR Foods. All Rights Reserved.</p>
-        <p> designed and developed by: SHREE CHANDRU R</p>
-    </footer>
-</body>
-</html>
-
-about.html
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SUPERSTAR FOODS</title>
-    <style>
-        body {
-            background-color: rgb(240, 159, 163);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: rgb(243, 110, 110);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: rgb(242, 81, 81);
-        }
-        nav a {
-            color: rgb(246, 10, 10);
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        nav a:hover {
-            background-color: rgb(181, 19, 19);
-        }
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-            text-align: justify;
-        }
-        footer {
-            background-color: rgb(117, 15, 5);
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>About SUPERSTAR Foods</h1>
-    </header>
-    <nav>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <section>
-        <h2>Our Story</h2>
-        <div class="content">
-            <p>Welcome to SUPERSTAR Foods, where we bring together a love for fresh, delicious meals and a passion for hospitality. Established with the goal of creating memorable dining experiences, Java Foods is your go-to destination for a delightful culinary journey.</p>
-            <p>Our team is committed to using the finest ingredients to prepare dishes that reflect authenticity and innovation. Whether you're here for a hearty meal, a light snack, or a sweet treat, our menu is designed to cater to every craving.</p>
-            <p>We take pride in our warm and inviting atmosphere, perfect for family gatherings, friendly get-togethers, or a quiet meal on your own. At Java Foods, we believe food is more than just sustenance—it's an experience, and we are thrilled to share it with you.</p>
-        </div>
-    </section>
-    <footer>
-        <p>&copy;SUPERSTAR Foods. All Rights Reserved.</p>
-        <p> designed and developed by:SHREE CHANDRU R</p>
-    </footer>
+    
 </body>
 </html>
 
@@ -512,10 +243,7 @@ about.html
 ```
 ## OUTPUT:
 
-![alt text](<Screenshot (23).png>)
-![alt text](<Screenshot (24).png>)
-![alt text](<Screenshot (25).png>)
-![alt text](<Screenshot (26).png>)
+![alt text](<web ex -7 .png>)
 
 
 ## RESULT:
